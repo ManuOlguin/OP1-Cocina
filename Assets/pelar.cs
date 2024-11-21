@@ -7,16 +7,17 @@ public class pelar : MonoBehaviour
 // Reference to the whole apple and sliced apple models
     public GameObject papa;
     public GameObject papaParticles; // This should be a prefab for spawning
-    // The tag to identify the knife
-    public string knifeTag = "knife";
+
+    public string knifeTag = "pelapapa";
     public Material newMaterial;
+    public bool isPelada = false;
+    public bool isHervida = false; 
 
     void OnCollisionEnter(Collision collision)
     {
-                    Debug.Log("Papa peladasadasd");
 
         // Check if the colliding object is the knife
-        if (collision.gameObject.CompareTag(knifeTag))
+        if (collision.gameObject.CompareTag(knifeTag) && !isPelada)
         {
             Debug.Log("Papa pelada");
             pelarPapa();
@@ -30,6 +31,7 @@ public class pelar : MonoBehaviour
         {
             renderer.material = newMaterial;
         }
+        isPelada = true;
 
         ParticleSystem particleSystem = papaParticles.GetComponent<ParticleSystem>();
         if (particleSystem != null)

@@ -6,11 +6,19 @@ public class harinita : MonoBehaviour
 {
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Bowl"))
+        Debug.Log("Flour Collision detected with " + collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Harina"))
+        {
+        }
+        else
+        {
+             if (collision.gameObject.CompareTag("Bowl"))
         {
            
         }
                     Destroy(gameObject); // Despawn the flour particle
 
+        }
+       
     }
 }

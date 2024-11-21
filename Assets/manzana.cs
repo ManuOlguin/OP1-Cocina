@@ -7,7 +7,7 @@ public class AppleSlicer : MonoBehaviour
     public GameObject slicedApplePrefab; // This should be a prefab for spawning
 
     // The tag to identify the knife
-    public string knifeTag = "Knife";
+    public string knifeTag = "knife";
 
     void OnCollisionEnter(Collision collision)
     {

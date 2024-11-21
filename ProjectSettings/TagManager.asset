@@ -10,6 +10,24 @@ TagManager:
   - PearSlice
   - Banana
   - Whisk
+  - pelapapa
+  - WaterStream
+  - Bowl
+  - Pot
+  - Pan
+  - Spoon
+  - CarrotSlice
+  - OnionSlice
+  - Papa
+  - PapaHervida
+  - PisaPapa
+  - Harina
+  - Harinita
+  - cuttingBoard
+  - tirita
+  - Fuente
+  - Plato
+  - tomato
   layers:
   - Default
   - TransparentFX
@@ -19,7 +37,7 @@ TagManager:
   - UI
   - harinosia
   - harinitas
-  - 
+  - detector
   - 
   - 
   - 

@@ -8,11 +8,13 @@ public Transform flourBagTransform; // Reference to the flour bag transform
 public int flourAmount = 100; // Number of flour particles to spawn
 public float upsideDownThreshold = 0.5f; // Threshold for detecting "upside down" (adjust as needed)
 
+public GameObject harinaSpawn;
 private void Update()
 {
     // Check if the bag is upside down based on its rotation
     if (IsUpsideDown())
     {
+        Debug.Log("Flour bag is upside down!");
         FlipFlourBag();
     }
 }
@@ -28,14 +30,13 @@ bool IsUpsideDown()
 
 void FlipFlourBag()
 {
-
         // Calculate a small random offset along the X and Z axes
-        Vector3 randomOffset = new Vector3(Random.Range(-0.05f, 0.05f), 0, Random.Range(-0.05f, 0.05f));
-        
-        // The position for the flour particle should be above the bag, along the 'up' direction
-        Vector3 spawnPosition = flourBagTransform.position + flourBagTransform.up * 0.1f + randomOffset;
+    Vector3 randomOffset = new Vector3(Random.Range(-0.05f, 0.05f), 0, Random.Range(-0.05f, 0.05f));
+    
+    // The position for the flour particle should be at the harinaSpawn position with the random offset
+    Vector3 spawnPosition = harinaSpawn.transform.position + randomOffset;
 
-        // Instantiate the flour particle at the calculated position with no rotation (or use a random rotation if desired)
-        Instantiate(flourParticlePrefab, spawnPosition, Quaternion.identity);
+    // Instantiate the flour particle at the calculated position with no rotation (or use a random rotation if desired)
+    Instantiate(flourParticlePrefab, spawnPosition, Quaternion.identity);
 }
 }
